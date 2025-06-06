@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vue3-2048-web
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    # 如果需要挂载本地环境变量文件，可自行在这里添加
+    # env_file:
+    #   - .env
+
+# 如需将来再加数据库或其它服务，可在此处定义其它 service
