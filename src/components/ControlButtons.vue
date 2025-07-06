@@ -26,27 +26,51 @@
   <style scoped>
   .controls {
     margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
   }
+  
   .btn {
     background: #ffbe76;
     border: none;
     padding: 8px 12px;
-    margin-right: 5px;
     border-radius: 5px;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
+    flex: 1 1 auto;
+    min-width: 100px;
+    text-align: center;
+    transition: background 0.3s ease;
   }
+  
   .btn:hover {
     background: #ff9f43;
   }
+  
   .input {
+    flex: 1 1 100%;
     margin-top: 5px;
-    width: 100%;
     padding: 5px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  /* 手机屏幕调整 */
+  @media (max-width: 480px) {
+    .btn {
+      padding: 6px 10px;
+      font-size: 0.9rem;
+      min-width: 80px;
+    }
+  
+    .input {
+      font-size: 0.9rem;
+    }
   }
   </style>
   

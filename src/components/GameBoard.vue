@@ -25,19 +25,39 @@
     background: #bbada0;
     padding: 10px;
     border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
+  
   .grid-row {
     display: flex;
   }
+  
   .grid-cell {
-    width: 70px;
-    height: 70px;
-    margin: 5px;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 0.3rem;
     background: #ccc0b3;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+  
+  /* 手机小屏幕调整 */
+  @media (max-width: 480px) {
+    .grid {
+      max-width: 320px;
+      padding: 6px;
+    }
+  
+    .grid-cell {
+      width: 3.5rem;  /* 约50px */
+      height: 3.5rem;
+      margin: 0.15rem;
+    }
+  }
   </style>
+  
   

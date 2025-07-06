@@ -1,16 +1,13 @@
 <template>
     <div class="app-container" @touchstart="handleTouchStart" @touchmove.prevent @touchend="handleTouchEnd">
-        <h1>/3/3^.^/3/3的729<br>(因为2187太难了)</h1>
-        <img
-      src="./assets/one-third-expression.png"
-      title="仅使用 1/3 构造 729 的表达式"
-      description="本图展示了通过嵌套求和和乘方，仅使用常数 1/3 构造出 729 的完整表达式。"
-    />
+        <h1 class="game-title">/3/3^.^/3/3的729<br>(因为2187太难了)</h1>
+
         <ScoreBoard :score="score" :highScore="highScore" />
         <ControlButtons v-model="saveData" @reset="initGame" @save="saveGame" @load="loadGame" />
         <GameBoard :board="board" />
         <div v-if="gameOver" class="game-over">游戏结束！</div>
     </div>
+
 </template>
 
 <script setup>
@@ -293,11 +290,21 @@ onBeforeUnmount(() => {
     font-family: 'Arial', sans-serif;
 }
 
-h1 {
+.game-title {
     font-size: 2rem;
     margin: 1rem 0;
 }
+@media (max-width: 480px) {
+  .game-title {
+    font-size: 1.2rem;
+  }
+}
 
+@media (max-width: 360px) {
+  .game-title {
+    font-size: 1rem;
+  }
+}
 .game-over {
     font-size: 2rem;
     color: red;
